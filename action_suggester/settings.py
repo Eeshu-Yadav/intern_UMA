@@ -1,3 +1,4 @@
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -14,7 +15,8 @@ SECRET_KEY = 'django-insecure-!qi6bhxfub!bx4+fcf7ed(*ydeursiz1tdcn@%^j52w(-=7w!)
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
+from dotenv import load_dotenv
+load_dotenv()
 
 # Application definition
 
@@ -65,11 +67,11 @@ WSGI_APPLICATION = 'action_suggester.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'action_suggester',
-        'USER': 'maneesh',
-        'PASSWORD': 'postgres',
-        'HOST': 'localhost',
-        'PORT': '5432',
+        'NAME': os.getenv('DB_NAME', 'default_db_name'),
+        'USER': os.getenv('DB_USER', 'default_user'),
+        'PASSWORD': os.getenv('DB_PASSWORD', 'default_password'),
+        'HOST': os.getenv('DB_HOST', 'localhost'),
+        'PORT': os.getenv('DB_PORT', '5432'),
     }
 }
 
@@ -113,5 +115,3 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-from dotenv import load_dotenv
-load_dotenv()

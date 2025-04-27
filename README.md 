@@ -1,0 +1,42 @@
+# Action Suggester API
+
+A Django REST API that analyzes text messages using OpenAI's GPT model and suggests relevant actions based on the detected tone and intent.
+
+## Features
+
+- Text analysis using OpenAI GPT-3.5-turbo
+- Action suggestions based on tone and intent
+- PostgreSQL database logging
+- RESTful endpoint with JSON responses
+
+## Setup Instructions
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/yourusername/action-suggester-api.git
+cd action-suggester-api
+```
+
+###2. Set up virtual environment
+```bash
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+```
+
+###3. Install dependencies
+```bash
+pip install -r requirements.txt
+```
+
+###4. Configure environment variables
+
+Create a .env file in the project root:
+```bash
+OPENAI_API_KEY=your_openai_api_key_here
+DB_NAME=action_suggester
+DB_USER=your_db_username
+DB_PASSWORD=your_db_password
+DB_HOST=localhost
+DB_PORT=5432
+```

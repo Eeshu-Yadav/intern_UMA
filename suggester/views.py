@@ -6,10 +6,8 @@ from rest_framework import status
 from dotenv import load_dotenv
 from .models import QueryLog
 
-# Load environment variables
 load_dotenv()
 
-# Initialize Genai client
 client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
 
 ACTION_MAPPING = {
@@ -26,7 +24,6 @@ class AnalyzeView(APIView):
             return Response({"error": "Query required"}, status=status.HTTP_400_BAD_REQUEST)
         
         try:
-            # Generate content with Gemini 2.0 Flash
             response = client.models.generate_content(
                 model="gemini-2.0-flash",
                 contents=f"Analyze this message: '{query}'. Respond ONLY with format: 'Tone: [one word] | Intent: [2-3 words]'"
@@ -35,7 +32,6 @@ class AnalyzeView(APIView):
             analysis = response.text
             tone, intent = self.parse_response(analysis)
             
-            # Action selection logic
             actions = []
             if "urgent" in tone.lower():
                 actions = ACTION_MAPPING["urgent"]
@@ -47,7 +43,6 @@ class AnalyzeView(APIView):
                 if not actions:
                     actions = ACTION_MAPPING["default"]
             
-            # Database logging
             QueryLog.objects.create(
                 query=query,
                 tone=tone,

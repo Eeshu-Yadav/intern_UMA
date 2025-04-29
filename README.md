@@ -1,10 +1,10 @@
 # Action Suggester API
 
-A Django REST API that analyzes text messages using OpenAI's GPT model and suggests relevant actions based on the detected tone and intent.
+A Django REST API that analyzes text messages using GEMINI's model and suggests relevant actions based on the detected tone and intent.
 
 ## Features
 
-- Text analysis using OpenAI GPT-3.5-turbo
+- Text analysis using gemini-1.5-pro-latest
 - Action suggestions based on tone and intent
 - PostgreSQL database logging
 - RESTful endpoint with JSON responses

@@ -58,4 +58,4 @@ python manage.py runserver
 
 ## Example Output
 
-![API Response Example](output/api-response-example.png)
+![API Response Example](output/Screenshot 2025-04-29 125323.png)

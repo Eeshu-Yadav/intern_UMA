@@ -58,4 +58,10 @@ python manage.py runserver
 
 ## Example Output
 
-![API Response Example](output/Screenshot%202025-04-29%20125323.png)
+![API Response Example 1](output/Screenshot%202025-04-29%20125323.png)
+
+![API Response Example 2](output/Screenshot%202025-04-29%20134850.png)
+
+![API Response Example 3](output/Screenshot%202025-04-29%20134937.png)
+
+![Postgres DB](output/Screenshot%202025-04-29%20135308.png)

@@ -18,21 +18,24 @@ git clone https://github.com/yourusername/action-suggester-api.git
 cd action-suggester-api
 ```
 
-###2. Set up virtual environment
+### 2. Set up virtual environment
+
 ```bash
 python -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
 ```
 
-###3. Install dependencies
+### 3. Install dependencies
+
 ```bash
 pip install -r requirements.txt
 ```
 
-###4. Configure environment variables
+### 4. Configure environment variables
 
-Create a .env file in the project root:
-```bash
+Create a `.env` file in the project root:
+
+```
 OPENAI_API_KEY=your_openai_api_key_here
 DB_NAME=action_suggester
 DB_USER=your_db_username
@@ -41,5 +44,18 @@ DB_HOST=localhost
 DB_PORT=5432
 ```
 
-###4. Screenshot of output
-![Alt text](output/Screenshot 2025-04-29 125323.png)
+### 5. Run migrations
+
+```bash
+python manage.py migrate
+```
+
+### 6. Start the development server
+
+```bash
+python manage.py runserver
+```
+
+## Example Output
+
+![API Response Example](output/api-response-example.png)
